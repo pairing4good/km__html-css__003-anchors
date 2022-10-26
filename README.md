@@ -1,11 +1,8 @@
 the `index.html` file
-- should display an importance level two heading
-- should contain a div
-- should contian a span
-- should contain an image with a source and an alternative text
+- should contain an element with the id `footer`
+- should contain an anchor that links to the element with the `footer` id
+- should contain an anchor that opens https://www.knightmoves.org in a new tab
+- should contain an anchor that opens https://www.knightmoves.org within the same page
 
 Resources:
-- https://www.w3schools.com/tags/tag_hn.asp
-- https://www.w3schools.com/tags/tag_div.asp
-- https://www.w3schools.com/tags/tag_span.asp
-- https://www.w3schools.com/tags/tag_img.asp
+- https://www.w3schools.com/tags/tag_a.asp

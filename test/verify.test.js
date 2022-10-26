@@ -36,41 +36,24 @@ afterEach(async () => {
   await browser.close();
 });
 
-describe('heading 2', () => {
-  it('should exist', async () => {
-    const heading = await page.$('h2');
-    expect(heading).not.toBeNull();
+describe('anchor', () => {
+  it('should contain a div with the id of footer', async () => {
+    const footer = await page.$('div[id="footer"]');
+    expect(footer).not.toBeNull();
   });
-});
 
-describe('span', () => {
-  it('should exist', async () => {
-    const span = await page.$('span')
-    expect(span).not.toBeNull();
-  });
-});
-
-
-describe('div', () => {
-  it('should exist', async () => {
-    const div = await page.$('div')
-    expect(div).not.toBeNull();
-  });
-});
-
-describe('image', () => {
-  it('should exist', async () => {
-    const img = await page.$('img')
-    expect(img).not.toBeNull();
+  it('should link to footer id', async () => {
+    const inPageAnchor = await page.$('a[href="#footer"]');
+    expect(inPageAnchor).not.toBeNull();
   });
   
-  it('should have source attribute', async () => {
-    const source = await page.$('img[src]')
-    expect(source).not.toBeNull();
+  it('should open a website in a new tab', async () => {
+    const tabAnchor = await page.$('a[href^="http"][target="_blank"]');
+    expect(tabAnchor).not.toBeNull();
   });
   
-  it('should have alternate text attribute', async () => {
-    const alternateText = await page.$('img[alt]')
-    expect(alternateText).not.toBeNull();
+  it('should open a website in the same page', async () => {
+    const samePageAnchor = await page.$('a[href^="http"]:not([target="_blank"])');
+    expect(samePageAnchor).not.toBeNull();
   });
 });
